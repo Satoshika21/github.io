@@ -3,145 +3,246 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nodo 21 - Hub de Soberanía Financiera</title>
+    <title>Nodo 21 Hub - Soberanía Digital y Bitcoin</title>
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #ffffff;
-            color: #2d3740;
+        /* Los colores y el estilo de la web */
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #121214;
+            color: #f5f5f7;
+            line-height: 1.6;
         }
 
         .container {
-            width: 100%;
-            max-width: 500px;
+            max-width: 1100px;
+            margin: 0 auto;
             padding: 40px 20px;
-            text-align: center;
-            box-sizing: border-box;
         }
 
-        .logo-text {
-            font-size: 110px;
-            font-weight: 900;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            line-height: 0.8;
-            margin-bottom: 20px;
-            letter-spacing: -3px;
-        }
-        .logo-n {
-            color: #f37021;
-        }
-        .logo-21 {
-            color: #2d3740;
-            font-size: 45px;
-            margin-top: 6px;
-            margin-left: 4px;
+        /* BLOQUE 1: El Gran Cartel */
+        header {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(180deg, #1e1e24 0%, #121214 100%);
         }
 
         h1 {
-            font-size: 24px;
-            font-weight: 700;
-            margin: 0 0 8px 0;
+            font-size: 2.8rem;
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-weight: 800;
         }
 
-        p.description {
-            font-size: 16px;
-            color: #666666;
-            margin: 0 0 40px 0;
-            line-height: 1.5;
+        h1 span {
+            color: #f2a900; /* Naranja Bitcoin */
         }
 
-        .links-space {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
+        .subtitle {
+            font-size: 1.25rem;
+            color: #a0a0aa;
+            max-width: 800px;
+            margin: 0 auto 40px auto;
         }
 
         .btn {
-            display: block;
+            display: inline-block;
+            background-color: #f2a900;
+            color: #121214;
+            padding: 15px 30px;
+            border-radius: 8px;
             text-decoration: none;
-            font-size: 16px;
-            font-weight: 600;
-            padding: 18px 20px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: background 0.2s;
+            margin: 10px;
+        }
+
+        .btn:hover {
+            background-color: #ffb81c;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #ffffff;
+            border: 2px solid #3f3f46;
+        }
+
+        .btn-secondary:hover {
+            background-color: #27272a;
+        }
+
+        /* BLOQUE 2: Los Tres Pilares */
+        .pilares {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+
+        .pilar-card {
+            background-color: #1e1e24;
+            padding: 30px;
             border-radius: 12px;
-            transition: all 0.2s ease;
-            box-sizing: border-box;
+            border: 1px solid #27272a;
         }
 
-        .btn-dark {
-            background-color: #2d3740;
+        .pilar-card h3 {
+            font-size: 1.4rem;
             color: #ffffff;
-        }
-        .btn-dark:hover {
-            background-color: #1a1a1a;
-        }
-
-        .btn-orange {
-            background-color: #f37021;
-            color: #ffffff;
-        }
-        .btn-orange:hover {
-            background-color: #e05e13;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .btn-disabled {
-            background-color: #f5f5f5;
-            color: #aaaaaa;
-            border: 2px dashed #dddddd;
-            cursor: not-allowed;
+        .pilar-card p {
+            color: #a0a0aa;
+            font-size: 1rem;
         }
 
-        .footer {
-            margin-top: 50px;
-            font-size: 13px;
-            color: #999999;
+        /* BLOQUE 3: Mitos vs Realidad */
+        .mitos-section {
+            background-color: #1e1e24;
+            padding: 40px;
+            border-radius: 12px;
+            margin: 60px 0;
+            border: 1px solid #27272a;
+        }
+
+        .mitos-section h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2rem;
+        }
+
+        .mito-box {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #27272a;
+        }
+
+        .mito-box:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .m-error {
+            color: #ef4444;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .m-ok {
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        /* BLOQUE 4: Pie de página */
+        footer {
+            background-color: #09090b;
+            text-align: center;
+            padding: 60px 20px;
+            margin-top: 80px;
+            border-top: 1px solid #1e1e24;
+        }
+
+        footer p {
+            color: #71717a;
+            margin-bottom: 20px;
+        }
+
+        .contacto-info {
+            color: #f5f5f7;
+            font-size: 1.1rem;
+            margin: 10px 0;
+        }
+
+        .nostr-badge {
+            display: inline-block;
+            background-color: #27272a;
+            color: #ca8a04;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            margin-top: 15px;
+            border: 1px solid #ca8a04;
+        }
+
+        /* Ajustes para móviles */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .subtitle { font-size: 1.1rem; }
+            .mitos-section { padding: 20px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        
-        <div class="logo-text">
-            <span class="logo-n">N</span><span class="logo-21">21</span>
+    <!-- BLOQUE 1: El Gran Cartel -->
+    <header>
+        <div class="container">
+            <h1>Nodo 21 Hub:<br><span>El puente de soberanía digital entre España y LATAM</span></h1>
+            <p class="subtitle">Educación independiente sobre Bitcoin, diseñada para conectar a la diáspora hispana, fomentar entornos Bitcoin-friendly y devolverte el control absoluto de tu dinero. Sin intermediarios, sin fronteras.</p>
+            <div>
+                <a href="mailto:info@nodo21hub.com" class="btn">Empieza tu camino hoy</a>
+                <a href="#pilares" class="btn btn-secondary">Descubre más</a>
+            </div>
         </div>
+    </header>
 
-        <h1>Nodo 21</h1>
-        
-        <p class="description">Hub de soberanía financiera y adopción de Bitcoin en España.</p>
+    <div class="container" id="pilares">
+        <!-- BLOQUE 2: Los Tres Pilares -->
+        <section class="pilares">
+            <div class="pilar-card">
+                <h3>🌍 Conectando la Diáspora Global</h3>
+                <p>Millones de personas necesitan mover el fruto de su trabajo entre España y Latinoamérica. Bitcoin elimina las comisiones abusivas y los tiempos de espera de los bancos tradicionales. Te enseñamos a utilizar la red para enviar y proteger tu valor de forma instantánea, segura y sin pedir permiso a nadie.</p>
+            </div>
+            <div class="pilar-card">
+                <h3>🤝 Entornos Bitcoin-Friendly</h3>
+                <p>Fomentamos la adopción real en la calle. Ayudamos a comercios locales, emprendedores y comunidades en España a integrar pagos con la red Lightning, creando ecosistemas circulares donde el dinero fuerte fluye libremente y beneficia a la economía local.</p>
+            </div>
+            <div class="pilar-card">
+                <h3>🔐 Soberanía Individual</h3>
+                <p>Tu dinero, tus reglas. Frente a la inflación y la pérdida de poder adquisitivo, te guiamos paso a paso en el uso de herramientas de código abierto, carteras sin custodia y buenas prácticas de privacidad. Conoce cómo proteger tus ahorros con el activo más escaso que existe.</p>
+            </div>
+        </section>
 
-        <div class="links-space">
+        <!-- BLOQUE 3: Mitos vs Realidad -->
+        <section class="mitos-section">
+            <h2>Desmontando el ruido: Lo que nadie te cuenta sobre Bitcoin</h2>
             
-            <a href="https://x.com/Nodo21Hub" class="btn btn-dark" target="_blank" rel="noopener noreferrer">
-                X / Twitter
-            </a>
+            <div class="mito-box">
+                <p class="m-error">❌ Mito: Es demasiado complicado, solo para informáticos.</p>
+                <p class="m-ok">✅ Realidad: Hoy en día, usar Bitcoin es tan sencillo como enviar un mensaje de texto. En Nodo 21 Hub te enseñamos desde cero, paso a paso, para que lo domines sin tecnicismos.</p>
+            </div>
 
-            <a href="mailto:contacto@nodo21hub.com" class="btn btn-dark">
-                Correo Electrónico
-            </a>
+            <div class="mito-box">
+                <p class="m-error">❌ Mito: Llego tarde, ya no merece la pena aprender.</p>
+                <p class="m-ok">✅ Realidad: Solo habrá 21 millones de monedas en toda la historia. El protocolo aún está en fase de adopción temprana global. El mejor momento para entender la revolución del dinero duro es hoy.</p>
+            </div>
 
-            <a href="#" class="btn btn-orange">
-                ⚡️ Red Lightning (Aportaciones)
-            </a>
-
-            <a href="#" class="btn btn-disabled" onclick="return false;">
-                Nostr (Próximamente)
-            </a>
-
-        </div>
-
-        <div class="footer">
-            <p>Nodo 21 • Código Abierto & Sin Rastreadores</p>
-        </div>
-
+            <div class="mito-box">
+                <p class="m-error">❌ Mito: Es inseguro y no tiene respaldo.</p>
+                <p class="m-ok">✅ Realidad: Bitcoin está respaldado por la red de ordenadores más grande, potente y descentralizada del mundo. Nadie puede falsificarlo ni inflarlo a voluntad.</p>
+            </div>
+        </section>
     </div>
+
+    <!-- BLOQUE 4: Pie de página -->
+    <footer>
+        <div class="container">
+            <p><strong>Nodo 21 Hub ⚡️</strong><br>El futuro del dinero se construye en español y de forma descentralizada.</p>
+            <div class="contacto-info">✉️ Email: info@nodo21hub.com</div>
+            <div class="nostr-badge">💜 Nostr (NIP-05): nat21@nodo21hub.com</div>
+        </div>
+    </footer>
 
 </body>
 </html>
